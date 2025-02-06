@@ -156,7 +156,7 @@ export default function Home() {
         const newSong = (Math.ceil(Math.random() * (Songs.length - 1)));
         setCurrentGif(count => (count + newCount) % GifList.length);
         setCurrentSong(currentSong=>(currentSong+newSong)%Songs.length)
-        setTimeout(()=>{playVideo()}, 500)
+        setTimeout(()=>{playVideo()}, 1000)
     };
 
     return (
@@ -173,7 +173,7 @@ export default function Home() {
                                         <button className="" onClick={()=>{
                                             const newCount = (Math.ceil(Math.random() * (GifList.length - 1)));
                                             setCurrentGif(count => (count + newCount) % GifList.length);
-                                            setCurrentSong(parseInt(song.id))
+                                            setCurrentSong(parseInt(song.id)-1)
                                             setTimeout(()=>{playVideo()}, 1000)
                                             }}>
                                             {song.id + "."} {song.title}
@@ -207,8 +207,9 @@ export default function Home() {
                 
                 <div className="relative text-white flex">
                     {isFirstVisit && (
-                        <div className="flex text-4xl text-white ">
-                            Click anywhere to start
+                        <div className="flex h-screen w-full justify-center items-center text-4xl text-white ">
+                            <div>Click anywhere to start</div>
+                            
                         </div>
                     )}
                     {!isFirstVisit && (<div className="flex items-center mb-4">
