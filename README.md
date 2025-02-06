@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LofiZen 🎵🌌
 
-## Getting Started
+LofiZen is a simple and immersive **Lofi Music Player** that helps you relax, focus, and unwind. It features a dynamic background with GIFs, a curated playlist of lofi songs, a to-do list, a timer, and an easy-to-use interface with YouTube integration.
 
-First, run the development server:
+## Features ✨
+- 🎶 **Curated Lofi Playlist** – A collection of relaxing lofi songs streamed from YouTube.
+- 🎥 **Dynamic Background GIFs** – Enhances the ambiance with randomly changing GIFs.
+- ⏯️ **Playback Controls** – Play, pause, skip, and shuffle tracks effortlessly.
+- 📌 **Now Playing Sidebar** – View and switch between available songs.
+- ⏳ **Real-time Clock** – Displays the current time in a 12-hour format.
+- ✅ **To-Do List** – Keep track of tasks while you work or study.
+- ⏲️ **Timer** – Set timers to enhance productivity and time management.
+- 🖱️ **One-Click Start** – Starts playback on the first click for an intuitive user experience.
 
-```bash
+## Installation & Setup 🚀
+
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm or yarn
+
+### Clone the Repository
+```sh
+git clone https://github.com/yourusername/lofi-zen.git
+cd lofi-zen
+```
+
+### Install Dependencies
+```sh
+npm install
+# or
+yarn install
+```
+
+### Run the Development Server
+```sh
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app will be available at **http://localhost:3000**.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to Use 🎧
+1. Open the app and click anywhere to start playback.
+2. Enjoy a random GIF background and lofi music.
+3. Use the playback controls to play, pause, skip, or shuffle.
+4. Click on "Now Playing" to select a specific song from the sidebar.
+5. Use the **To-Do List** to organize tasks while listening.
+6. Set a **Timer** to stay productive and focused.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used 🛠️
+- **Next.js** – For server-side rendering and performance.
+- **TypeScript** – Ensures type safety and better development experience.
+- **Tailwind CSS** – For sleek and responsive UI design.
+- **YouTube Iframe API** – For streaming lofi music.
 
-## Learn More
+## Future Improvements 🚀
+- 📝 **Local Storage To-do list** – Move the to-do list to local storage so that it retains the tasks on refresh
 
-To learn more about Next.js, take a look at the following resources:
+## License 📜
+This project is open-source and available under the [MIT License](LICENSE).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+💙 Made with love for lofi lovers! Feel free to contribute and enhance the experience.
