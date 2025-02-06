@@ -1,7 +1,14 @@
-import { RefObject } from "react"
+"use client"
+import { RefObject, useState, useEffect } from "react"
 
 export const Player = ({iframeRef, url}: {iframeRef: RefObject<null>, url: string}) => {
-    const origin = window.location.origin;
+    const [origin, setOrigin] = useState('https://localhost:3000');
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setOrigin(window.location.origin);
+        }
+    }, []);
 
     return <>
         <div className="w-full h-full flex items-center justify-center rounded-lg">
