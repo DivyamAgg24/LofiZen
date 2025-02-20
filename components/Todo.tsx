@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 interface Task{
     todo: string,
@@ -8,6 +8,20 @@ interface Task{
 export const TodoList = () => {
     const [todo, setTodo] = useState("")
     const [tasks, setTasks] = useState<Task[]>([])
+
+    useEffect(()=>{
+        const savedTasks = localStorage.getItem("todos");
+        if (savedTasks) {
+            setTasks(JSON.parse(savedTasks));
+        }
+    }, [])
+
+    useEffect(() => {
+        setTimeout(function(){
+            localStorage.setItem("todos", JSON.stringify(tasks));
+        }, 100)
+        // Save tasks to localStorage whenever tasks change
+    }, [tasks]);
 
     const handleAddTask = () => {
         if (todo.trim() !== "") {

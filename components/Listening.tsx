@@ -12,7 +12,7 @@ const IsListening = ({ track }: IsListeningProps) => {
         }, 700)
 
         return () => clearInterval(interval)
-    })
+    }, [])
 
     return <div className="block">
         <span className="absolute text-xl text-white text-shadow-red-glow flex items-center">
