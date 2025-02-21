@@ -8,9 +8,11 @@ LofiZen is a simple and immersive **Lofi Music Player** that helps you relax, fo
 - ⏯️ **Playback Controls** – Play, pause, skip, and shuffle tracks effortlessly.
 - 📌 **Now Playing Sidebar** – View and switch between available songs.
 - ⏳ **Real-time Clock** – Displays the current time in a 12-hour format.
-- ✅ **To-Do List** – Keep track of tasks while you work or study.
+- ✅ **To-Do List** – Keep track of tasks while you work or study. 
+- 📝 **Local Storage** – To-do list is stored in local storage so that it retains the tasks on refresh
 - ⏲️ **Timer** – Set timers to enhance productivity and time management.
 - 🖱️ **One-Click Start** – Starts playback on the first click for an intuitive user experience.
+- ⭕ **React-redux** - State management of TodoList using react-redux
 
 ## Installation & Setup 🚀
 
@@ -53,9 +55,6 @@ The app will be available at **http://localhost:3000**.
 - **TypeScript** – Ensures type safety and better development experience.
 - **Tailwind CSS** – For sleek and responsive UI design.
 - **YouTube Iframe API** – For streaming lofi music.
-
-## Future Improvements 🚀
-- 📝 **Local Storage To-do list** – Move the to-do list to local storage so that it retains the tasks on refresh
 
 ## License 📜
 This project is open-source and available under the [MIT License](LICENSE).
