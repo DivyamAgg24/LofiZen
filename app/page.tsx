@@ -5,7 +5,7 @@ import Controls from "@/components/ControlButtons";
 import { Player } from "@/components/VideoPlayer";
 import { Songs } from "@/lib/songs";
 import { TopbarRight } from "@/components/TopbarRight";
-import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
+import { useAppDispatch } from "@/hooks/hooks";
 import { visibility } from "@/features/todoSlice";
 
 
@@ -17,7 +17,6 @@ export default function Home() {
     const iframeRef = useRef(null);
     const [time, setTime] = useState(new Date());
     const [sidebar, setSidebar] = useState(false)
-    const showTodo = useAppSelector(state =>state.showTodo.show)
     const dispatch = useAppDispatch()
 
     useEffect(() => {
