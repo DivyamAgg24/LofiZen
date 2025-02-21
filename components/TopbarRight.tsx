@@ -1,12 +1,18 @@
+"use client"
 import { useEffect, useState } from "react"
 import { TodoList } from "./Todo"
+import { useAppDispatch, useAppSelector } from "@/hooks/hooks"
+import { visibility } from "@/features/todoSlice"
+
 
 export const TopbarRight = () => {
     const [clock, setClock] = useState(false)
-    const [showTodo, setShowTodo] = useState(false)
+    // const [showTodo, setShowTodo] = useState(false)
     const [minutes, setMinutes] = useState(5)
     const [seconds, setSeconds] = useState(0)
     const [isRunning, setIsRunning] = useState(false)
+    const showTodo = useAppSelector(state => state.showTodo.show)
+    const dispatch = useAppDispatch()
 
     
     useEffect(()=>{
@@ -74,7 +80,7 @@ export const TopbarRight = () => {
         <div>
             <button onClick={()=>{
                 setClock((show)=>!show)
-                setShowTodo(false)
+                dispatch(visibility(false))
                 }}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -83,7 +89,7 @@ export const TopbarRight = () => {
         </div>
         <div>
             <button onClick={()=>{
-                setShowTodo((show)=>!show)
+                dispatch(visibility(!showTodo))
                 setClock(false)
                 }}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-8">

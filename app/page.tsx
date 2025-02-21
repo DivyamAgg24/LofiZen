@@ -1,41 +1,3 @@
-// "use client"
-// import Image from "next/image";
-// import GifList from "@/components/backgroundGif";
-// import { useState } from "react";
-
-// export default function Home() {
-
-//     const [current, setCurrent] = useState(0)
-
-//     const nextGif = () => {
-//         let newCount = (Math.ceil(Math.random() * (GifList.length - 1)))
-//         console.log(current, newCount)
-//         setCurrent(count => (count + newCount) % GifList.length)
-//         console.log(current, newCount)
-//     }
-//   return (
-//     <div className="relative h-full w-full">
-//         <div>
-//             {GifList[current].gif}
-//         </div>
-//         <div className="fixed text-3xl text-white">
-//             <button onClick={nextGif}> {">"} </button>
-//             <button onClick={nextGif}> {"<"} </button>
-//         </div>
-//         <div className="pointer-events-none select-none top-full left-full">
-//             <div className="w-full h-full flex items-center justify-center rounded-lg">
-//                 <div className="-z-[1] w-[100vw] h-[100vh] rounded-lg">
-//                     <div className="w-full h-full">
-//                         <iframe width="560" height="315" src="https://www.youtube.com/embed/tNkZsRW7h2c?autoplay=0&mute=0&controls=0&origin=http://localhost:3000&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&modestbranding=true&color=black&enablejsapi=1&widgetid=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" className="h-full w-full" allowFullScreen></iframe>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-//   );
-// }
-
-
 "use client"
 import { useState, useEffect, useRef } from "react";
 import GifList from "@/components/backgroundGif";
@@ -43,6 +5,9 @@ import Controls from "@/components/ControlButtons";
 import { Player } from "@/components/VideoPlayer";
 import { Songs } from "@/lib/songs";
 import { TopbarRight } from "@/components/TopbarRight";
+import { useAppDispatch, useAppSelector } from "@/hooks/hooks";
+import { visibility } from "@/features/todoSlice";
+
 
 export default function Home() {
     const [currentGif, setCurrentGif] = useState(0);
@@ -52,7 +17,8 @@ export default function Home() {
     const iframeRef = useRef(null);
     const [time, setTime] = useState(new Date());
     const [sidebar, setSidebar] = useState(false)
-
+    const showTodo = useAppSelector(state =>state.showTodo.show)
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         // Add click listener for first visit
@@ -192,7 +158,9 @@ export default function Home() {
                     <div className="flex justify-between relative">
                         <div className="flex flex-col text-lg gap-y-3">
                             <div>
-                                <button className="" onClick={()=>setSidebar(true)}>
+                                <button className="" onClick={()=>{setSidebar(true)
+                                    dispatch(visibility(false))
+                                }}>
                                     Now Playing: {Songs[currentSong].title}
                                 </button>
                             </div>
