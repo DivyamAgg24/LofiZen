@@ -192,29 +192,3 @@ export default function Home() {
         </div>
     );
 }
-
-
-
-
-{/* <button className="flex items-center mr-[10px] text-left text-shadow-glow-green">
-    <svg width="20" height="20" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 1H3V8H4V7H5V6H6V5H7V4H6V3H5V2H4V1Z" fill="white"/>
-    </svg>
-</button>
-<button className="flex items-center mr-[10px] text-left text-shadow-glow-green">
-    <svg width="20" height="20" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7 1H6V3H4V5H2V6H1V7H3V6H5V4H7V3H8V2H7V1Z" fill="white"/>
-        <path d="M3 2H1V3H2V4H3V2Z" fill="white"/>
-        <path d="M8 6H7V5H6V8H7V7H8V6Z" fill="white"/>
-    </svg>
-</button>
-<button className="flex items-center mr-[10px] text-left text-shadow-glow-green">
-    <svg width="20" height="20" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 1H5V3H6V2H7V1H8V8H7V7H6V6H5V8H4V7H3V6H2V5H1V4H2V3H3V2H4V1Z" fill="white"/>
-    </svg>
-</button>
-<button className="flex items-center mr-[10px] text-left text-shadow-glow-green">
-    <svg width="20" height="20" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2 1H3V2H4V3H5V1H6V2H7V3H8V4H9V5H8V6H7V7H6V8H5V6H4V7H3V8H2V1Z" fill="white"/>
-    </svg>
-</button> */}
