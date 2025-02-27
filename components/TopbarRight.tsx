@@ -3,77 +3,50 @@ import { useEffect, useState } from "react"
 import { TodoList } from "./Todo"
 import { useAppDispatch, useAppSelector } from "@/hooks/hooks"
 import { visibility } from "@/features/todoSlice"
-
+import TaskClock from "./TaskClock"
 
 export const TopbarRight = () => {
     const [clock, setClock] = useState(false)
-    // const [showTodo, setShowTodo] = useState(false)
-    const [minutes, setMinutes] = useState(5)
+    const [hours, setHours] = useState(0)
+    const [minutes, setMinutes] = useState(0)
     const [seconds, setSeconds] = useState(0)
     const [isRunning, setIsRunning] = useState(false)
     const showTodo = useAppSelector(state => state.showTodo.show)
     const dispatch = useAppDispatch()
 
-    
+
     useEffect(()=>{
         let timer: NodeJS.Timeout;
         if (isRunning){
             timer = setInterval(()=>{
-                if (seconds === 0){
-                    if (minutes === 0){
-                        setIsRunning(false)
-                        clearInterval(timer)
+                if (seconds === 59){
+                    if (minutes === 59){
+                        if (hours === 99){
+                            setIsRunning(false)
+                            clearInterval(timer)
+                        }
+                        else{
+
+                            setHours(prev=>prev+1)
+                            setMinutes(0)
+                            setSeconds(0)
+                        }
                     } 
                     else{
-                        setMinutes(prev=>prev-1)
-                        setSeconds(59)
+                        setMinutes(prev=>prev+1)
+                        setSeconds(0)
                     }
                 }
                 else{
-                    setSeconds(prev=>prev-1)
+                    setSeconds(prev=>prev+1)
                 }
             }, 1000)
         }
         return () => clearInterval(timer)
-    }, [isRunning, minutes, seconds])
-    
-
-    const handleReset = () =>{
-        setMinutes(5)
-        setSeconds(0)
-        setIsRunning(false)
-    }
-    
-    const formatTime = (time: number) => {
-        return time.toString().padStart(2, '0')
-    }
+    }, [isRunning, minutes, seconds, hours])
 
     return <>
-        {clock && (
-            <div className="absolute flex flex-col top-10 -right-4 z-60 bg-black/80 justify-center p-2 rounded">
-                <div className="text-center flex justify-between mx-3 items-center">
-                    <button className="text-lg" onClick={()=>{
-                        setMinutes((minutes)=>minutes-5)
-                        setSeconds(0)
-                        setIsRunning(false)
-                    }}>{"<"}</button>
-                    <div>{formatTime(minutes)}:{formatTime(seconds)}</div>
-                    <button className="text-lg" onClick={()=>{
-                        setMinutes((minutes)=>minutes+5)
-                        setSeconds(0)
-                        setIsRunning(false)
-                    }}>{">"}</button>
-                </div>
-                <div className="flex gap-x-4 mt-3 px-2">
-                    <button onClick={()=>{
-                        setIsRunning((start)=> !start)
-                    }}>
-                        {!isRunning ? "Start": "Pause"}
-                    </button>
-                    <button className="" onClick={handleReset}>Reset</button>
-                </div>
-            </div>
-        )}
+        {clock && <TaskClock minutes={minutes} seconds={seconds} isRunning={isRunning} setMinutes={setMinutes} setSeconds={setSeconds} setIsRunning={setIsRunning} hours={hours} setHours={setHours} />}
 
         {showTodo && <TodoList />}
 

@@ -121,13 +121,13 @@ export default function Home() {
         const newSong = (Math.ceil(Math.random() * (Songs.length - 1)));
         setCurrentGif(count => (count + newCount) % GifList.length);
         setCurrentSong(currentSong=>(currentSong+newSong)%Songs.length)
-        setTimeout(()=>{playVideo()}, 1000)
+        setTimeout(()=>{playVideo()}, 500)
     };
 
     return (
         <div className="text-white relative max-h-screen w-full">
             {sidebar && (
-                    <div className="absolute h-screen w-full z-50 bg-black/50">
+                    <div className="absolute h-screen w-full z-50 bg-gradient-to-l from-black to-black/50">
                         <div className="absolute max-h-screen h-full right-0 border-l-2">
                             <div className="m-5 ">
                                 <div className="flex justify-end text-white/60">
@@ -155,7 +155,7 @@ export default function Home() {
                 {GifList[currentGif].gif}
                 {!isFirstVisit &&(
                     <div className="flex justify-between relative">
-                        <div className="flex flex-col text-lg gap-y-3">
+                        <div className="flex flex-col lg:text-2xl text-xl gap-y-3">
                             <div>
                                 <button className="" onClick={()=>{setSidebar(true)
                                     dispatch(visibility(false))
@@ -164,7 +164,7 @@ export default function Home() {
                                 </button>
                             </div>
                             <div className="text-4xl ">{formatTime(time)}</div>
-                            <div>We have a bunch of lofi songs to help you relax, focus, or chill</div>
+                            {/* <div>We have a bunch of lofi songs to help you relax, focus, or chill</div> */}
                         </div>
                         <div className="flex gap-x-4 items-start">
                             <TopbarRight />
@@ -192,3 +192,7 @@ export default function Home() {
         </div>
     );
 }
+
+
+{/* <div className="relative z-50">
+<div className="absolute h-screen bg-black/90 right-0 border-l-2"> */}
