@@ -43,7 +43,7 @@ export const TopbarRight = () => {
             }, 1000)
         }
         return () => clearInterval(timer)
-    }, [isRunning, minutes, seconds])
+    }, [isRunning, minutes, seconds, hours])
 
     return <>
         {clock && <TaskClock minutes={minutes} seconds={seconds} isRunning={isRunning} setMinutes={setMinutes} setSeconds={setSeconds} setIsRunning={setIsRunning} hours={hours} setHours={setHours} />}
