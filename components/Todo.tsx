@@ -17,10 +17,9 @@ export const TodoList = () => {
     }, [])
 
     useEffect(() => {
-        setTimeout(function(){
+        if (tasks.length > 0){
             localStorage.setItem("todos", JSON.stringify(tasks));
-        }, 100)
-        // Save tasks to localStorage whenever tasks change
+        }
     }, [tasks]);
 
     const handleAddTask = () => {
