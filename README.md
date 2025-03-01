@@ -12,7 +12,7 @@ LofiZen is a simple and immersive **Lofi Music Player** that helps you relax, fo
 - 📝 **Local Storage** – To-do list is stored in local storage so that it retains the tasks on refresh
 - ⏲️ **Timer** – Set timers to enhance productivity and time management.
 - 🖱️ **One-Click Start** – Starts playback on the first click for an intuitive user experience.
-- ⭕ **React-redux** - State management of TodoList using react-redux
+- ⭕ React-redux - State management of TodoList using react-redux
 
 ## Installation & Setup 🚀
 
