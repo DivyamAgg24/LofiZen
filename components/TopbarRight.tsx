@@ -11,6 +11,8 @@ export const TopbarRight = () => {
     const [minutes, setMinutes] = useState(0)
     const [seconds, setSeconds] = useState(0)
     const [isRunning, setIsRunning] = useState(false)
+    const [startTime, setStartTime] = useState("")
+    const [clockTask, setClockTask] = useState("")
     const showTodo = useAppSelector(state => state.showTodo.show)
     const dispatch = useAppDispatch()
 
@@ -46,7 +48,7 @@ export const TopbarRight = () => {
     }, [isRunning, minutes, seconds, hours])
 
     return <>
-        {clock && <TaskClock minutes={minutes} seconds={seconds} isRunning={isRunning} setMinutes={setMinutes} setSeconds={setSeconds} setIsRunning={setIsRunning} hours={hours} setHours={setHours} />}
+        {clock && <TaskClock minutes={minutes} seconds={seconds} isRunning={isRunning} setMinutes={setMinutes} setSeconds={setSeconds} setIsRunning={setIsRunning} hours={hours} setHours={setHours} startTime={startTime} setStartTime={setStartTime} clockTask={clockTask} setClockTask={setClockTask} />}
 
         {showTodo && <TodoList />}
 
