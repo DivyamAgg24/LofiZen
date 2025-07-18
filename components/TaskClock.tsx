@@ -8,7 +8,11 @@ interface ClockParameters {
     setSeconds: Dispatch<SetStateAction<number>>,
     setHours: Dispatch<SetStateAction<number>>,
     isRunning: boolean,
-    setIsRunning: Dispatch<SetStateAction<boolean>>
+    setIsRunning: Dispatch<SetStateAction<boolean>>,
+    startTime: string,
+    setStartTime: Dispatch<SetStateAction<string>>
+    clockTask: string,
+    setClockTask: Dispatch<SetStateAction<string>>
 }
 
 interface ClockTasksParameters {
@@ -19,11 +23,9 @@ interface ClockTasksParameters {
     totalSeconds: number, // Add this to track total seconds for calculations
 }
 
-export const TaskClock = ({ minutes, seconds, setMinutes, setSeconds, isRunning, setIsRunning, hours, setHours }: ClockParameters) => {
+export const TaskClock = ({ minutes, seconds, setMinutes, setSeconds, isRunning, setIsRunning, hours, setHours, startTime, setStartTime, clockTask, setClockTask }: ClockParameters) => {
 
-    const [startTime, setStartTime] = useState("")
     const [endTime, setEndTime] = useState("")
-    const [clockTask, setClockTask] = useState("")
     const [clockTasks, setClockTasks] = useState<ClockTasksParameters[]>([])
     const [activeTaskIndex, setActiveTaskIndex] = useState<number | null>(null)
 
@@ -174,7 +176,7 @@ export const TaskClock = ({ minutes, seconds, setMinutes, setSeconds, isRunning,
                             return <div key={index} className={`grid grid-cols-8 w-full bg-white/10 px-2 rounded py-2 justify-between`}>
                                 <input className="col-span-3 border bg-transparent px-2 rounded" onChange={e=>{setClockTasks(prevTasks => prevTasks.map((task, i) =>i === index ? { ...task, name: e.target.value } : task))}} value={task.name} />
                                 <div className="text-sm col-span-1 col-start-5 justify-self-center">
-                                    {task.stTime.substring(0, 2)}:{task.stTime.substring(2)}- 
+                                    {task.stTime ? `${task.stTime.substring(0, 2)}:${task.stTime.substring(2)}-` : "--"}  
                                     {task.edTime ? `${task.edTime.substring(0, 2)}:${task.edTime.substring(2)}` : " --:--"}
                                 </div>
                                 <div className="text-sm col-span-1 justify-self-center"> {task.totalTime} </div>

@@ -192,7 +192,3 @@ export default function Home() {
         </div>
     );
 }
-
-
-{/* <div className="relative z-50">
-<div className="absolute h-screen bg-black/90 right-0 border-l-2"> */}
