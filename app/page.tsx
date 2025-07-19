@@ -108,20 +108,20 @@ export default function Home() {
         const newCount = (Math.ceil(Math.random() * (GifList.length - 1)));
         setCurrentGif(count => (count + newCount) % GifList.length);
         setCurrentSong(currentSong=>(currentSong+1)%10)
-        setTimeout(()=>{playVideo()}, 500)
+        setTimeout(()=>{playVideo()}, 800)
     };
     const handlePrev = () => {
         const newCount = (Math.ceil(Math.random() * (GifList.length - 1)));
         setCurrentGif(count => (count + newCount) % GifList.length);
         setCurrentSong(currentSong=>(currentSong-1))
-        setTimeout(()=>{playVideo()}, 500)
+        setTimeout(()=>{playVideo()}, 800)
     };
     const handleShuffle = () => {
         const newCount = (Math.ceil(Math.random() * (GifList.length - 1)));
         const newSong = (Math.ceil(Math.random() * (Songs.length - 1)));
         setCurrentGif(count => (count + newCount) % GifList.length);
         setCurrentSong(currentSong=>(currentSong+newSong)%Songs.length)
-        setTimeout(()=>{playVideo()}, 500)
+        setTimeout(()=>{playVideo()}, 800)
     };
 
     return (

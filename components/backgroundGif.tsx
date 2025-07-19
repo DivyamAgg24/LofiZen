@@ -15,31 +15,31 @@ const gifs = [
     },
     {
         id : "4",
-        gif : <Image src="/moon.gif" alt="Moon" layout="fill" className="absolute" />
+        gif : <Image src="/moon.gif" alt="Moon" unoptimized={false} width={100} height={100} className="absolute aspect-video w-[100vw] h-[100vh] top-0 left-0 object-cover z-0" />
     },
     {
         id : "5",
-        gif : <Image src="/cdplayer.gif" alt="CD Player" layout="fill" className="absolute" />
+        gif : <Image src="/cdplayer.gif" alt="CD Player" unoptimized={false} width={100} height={100} className="absolute aspect-video w-[100vw] h-[100vh] top-0 left-0 object-cover z-0" />
     },
     {
         id : "6",
-        gif : <Image src="/rain.gif" alt="Kyoto Rain" layout="fill" className="absolute" />
+        gif : <Image src="/rain.gif" alt="Kyoto Rain" unoptimized={false} width={100} height={100} className="absolute aspect-video w-[100vw] h-[100vh] top-0 left-0 object-cover z-0" />
     },
     {
         id : "7",
-        gif : <Image src="/cigarette.gif" alt="Cigarette" layout="fill" className="absolute" />
+        gif : <Image src="/cigarette.gif" alt="Cigarette" unoptimized={false} width={100} height={100} className="absolute aspect-video w-[100vw] h-[100vh] top-0 left-0 object-cover z-0" />
     },
     {
         id : "8",
-        gif : <Image src="/sakura.gif" alt="Sakura" layout="fill" className="absolute" />
+        gif : <Image src="/sakura.gif" alt="Sakura" unoptimized={false} width={100} height={100} className="absolute aspect-video w-[100vw] h-[100vh] top-0 left-0 object-cover z-0" />
     },
     {
         id : "9",
-        gif : <Image src="/sleepinggirl.gif" alt="Sleeping Girl" layout="fill" className="absolute" />
+        gif : <Image src="/sleepinggirl.gif" alt="Sleeping Girl" unoptimized={false} width={100} height={100} className="absolute aspect-video w-[100vw] h-[100vh] top-0 left-0 object-cover z-0" />
     },
     {
         id : "10",
-        gif : <Image src="/room.gif" alt="Room" layout="fill" className="absolute" />
+        gif : <Image src="/room.gif" alt="Room" unoptimized={false} width={100} height={100} className="absolute aspect-video w-[100vw] h-[100vh] top-0 left-0 object-cover z-0" />
     }
 ]
 
